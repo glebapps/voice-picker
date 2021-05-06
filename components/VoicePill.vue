@@ -36,16 +36,16 @@ export default {
   border: none;
 
   &__icon {
+    margin-bottom: 16px;
     background-color: var(--bg-icon);
     border-radius: 50%;
-    margin-bottom: 16px;
   }
 
   &__name {
-    text-align: center;
     color: var(--fc-default);
     font-weight: var(--fw-bold);
     font-size: smaller;
+    text-align: center;
   }
 }
 </style>
