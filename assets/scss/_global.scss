@@ -14,3 +14,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
+
+*:focus {
+  outline: 3px dashed var(--bg-icon);
+  outline-offset: 8px;
+}
