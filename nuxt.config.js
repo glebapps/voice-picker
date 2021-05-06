@@ -28,10 +28,18 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    '@nuxtjs/style-resources',
   ],
 
+  styleResources: {
+    scss: [
+      './assets/scss/variables/main.scss',
+      './assets/scss/mixins/main.scss',
+    ],
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/svg'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

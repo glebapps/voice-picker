@@ -6,9 +6,8 @@ module.exports = {
   ],
   // add your custom config here
   // https://stylelint.io/user-guide/configuration
-  plugins: ['stylelint-scss', 'stylelint-prettier'],
+  plugins: ['stylelint-scss'],
   rules: {
-    'prettier/prettier': true,
     'at-rule-no-unknown': null,
     'scss/at-rule-no-unknown': true,
     'no-descending-specificity': null,
