@@ -34,6 +34,7 @@ export default {
   justify-content: center;
   background: none;
   border: none;
+  cursor: pointer;
 
   &__icon {
     margin-bottom: 16px;
