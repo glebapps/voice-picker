@@ -24,11 +24,11 @@ export default {
 <style lang="scss" scoped>
 .grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
   grid-template-rows: auto;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: baseline;
   column-gap: 48px;
   row-gap: 32px;
-  align-items: baseline;
 
   @media screen and (min-width: 400px) {
     grid-template-columns: repeat(2, 1fr);
