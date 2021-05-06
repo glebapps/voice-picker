@@ -16,3 +16,11 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+select {
+  @include inputStyle();
+
+  min-width: 150px;
+}
+</style>
