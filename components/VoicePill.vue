@@ -1,5 +1,5 @@
 <template>
-  <div class="voice">
+  <button class="voice">
     <img
       :src="require(`~/assets/img/icons/${icon}`)"
       alt=""
@@ -7,8 +7,8 @@
       aria-hidden="true"
       class="voice__icon"
     />
-    <p class="voice__name">{{ name }}</p>
-  </div>
+    <span class="voice__name">{{ name }}</span>
+  </button>
 </template>
 
 <script>
@@ -32,14 +32,20 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  font-weight: var(--fw-bold);
-  font-size: smaller;
+  background: none;
+  border: none;
 
   &__icon {
     background-color: var(--bg-icon);
     border-radius: 50%;
     margin-bottom: 16px;
+  }
+
+  &__name {
+    text-align: center;
+    color: var(--fc-default);
+    font-weight: var(--fw-bold);
+    font-size: smaller;
   }
 }
 </style>
