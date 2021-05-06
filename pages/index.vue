@@ -1,15 +1,12 @@
 <template>
-  <div class="hola">
-    hola
-    <p class="hola__p">hola p</p>
+  <div class="container">
+    <VoiceGrid />
   </div>
 </template>
 
 <style lang="scss" scoped>
-.hola {
-  color: red;
-  &__p {
-    color: blue;
-  }
+.container {
+  display: flex;
+  margin: 40px;
 }
 </style>

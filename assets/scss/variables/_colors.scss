@@ -1,0 +1,16 @@
+:root {
+  // Colors
+  --white: hsla(0, 0%, 100%, 1); // #fff
+  --black: rgb(0, 0, 0); // #000
+  --alto: hsla(0, 0%, 82.4%, 1); // #D2D2D2
+  --gray: hsla(0, 0%, 52.2%, 1); // #858585
+  --cod-gray: hsla(0, 0%, 10.6%, 1); // #1b1b1b
+
+  // Background
+--bg-body: var(--cod-gray);
+--bg-input: var(--black);
+--bg-icon: var(--alto);
+
+  // Font
+  --fc-default: var(--gray);
+}
