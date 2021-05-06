@@ -26,5 +26,8 @@ export default {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
+  column-gap: 48px;
+  row-gap: 32px;
+  align-items: baseline;
 }
 </style>
