@@ -1,12 +1,12 @@
 :root {
+  @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap');
+
   // Font Family
-  --ff-default: verdana, sans-serif;
+  --ff-default: 'Barlow', verdana, sans-serif;
 
   // Font Weight
-  --fw-regular: 400;
-  --fw-semi-bold: 500;
-  --fw-bold: 600;
-  --fw-extra-bold: 700;
+  --fw-regular: 500;
+  --fw-bold: 700;
 
   // Fonts Sizes
   --fs-default: 1.5rem; // 24px
