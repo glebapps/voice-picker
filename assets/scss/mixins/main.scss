@@ -1,0 +1,7 @@
+@mixin inputStyle($border-radius: 4px) {
+  height: 32px;
+  color: var(--fc-default);
+  background: var(--bg-input);
+  border-color: var(--bg-input);
+  border-radius: $border-radius;
+}
