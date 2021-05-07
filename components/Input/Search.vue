@@ -1,8 +1,10 @@
 <template>
   <div class="input">
-    <SearchIcon class="input__icon" />
-    <input type="text" />
-    <SearchClose class="input__icon-close" />
+    <SearchIcon class="input__search-icon" />
+    <input v-model="query" type="text" />
+    <butto class="input__close-icon" @click="query = ''">
+      <SearchClose v-if="query" />
+    </butto>
   </div>
 </template>
 
@@ -14,6 +16,11 @@ export default {
     SearchIcon,
     SearchClose,
   },
+  data() {
+    return {
+      query: '',
+    }
+  },
 }
 </script>
 
@@ -24,12 +31,14 @@ export default {
   align-items: center;
   max-width: fit-content;
 
-  &__icon {
+  &__search-icon {
     position: absolute;
     left: 4px;
   }
 
-  &__icon-close {
+  &__close-icon {
+    @include buttonStyle();
+
     position: absolute;
     right: 8px;
   }
