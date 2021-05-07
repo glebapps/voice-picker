@@ -1,14 +1,13 @@
 <template>
-  <button>
-    <RandomIcon />
-  </button>
+  <div @click="pickRandomVoice">RANDOM</div>
 </template>
 
 <script>
-import RandomIcon from '~/assets/svg/button-random.svg?inline'
 export default {
-  components: {
-    RandomIcon,
+  methods: {
+    pickRandomVoice() {
+      this.$store.commit('pickRandomVoice')
+    },
   },
 }
 </script>
@@ -16,5 +15,9 @@ export default {
 <style lang="scss" scoped>
 button {
   @include buttonStyle();
+}
+
+div {
+  cursor: pointer;
 }
 </style>

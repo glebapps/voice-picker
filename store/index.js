@@ -38,4 +38,12 @@ export const mutations = {
       }
     })
   },
+  pickRandomVoice(state) {
+    const numVoices = state.filteredVoices.length
+    const randomIndex = Math.floor(Math.random() * numVoices)
+    const selectedVoice = state.filteredVoices.find(
+      (voice, index) => index === randomIndex
+    )
+    state.selectedVoice = selectedVoice.id
+  },
 }
