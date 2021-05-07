@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     toggleFav() {
-      this.$store.commit('toggleFav', this.voice.id)
+      this.$store.commit('toggleFav', this.voice)
     },
     selectVoice() {
       const selectedVoice =
@@ -47,10 +47,6 @@ export default {
   --t-hover: 0.3s;
 
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
   &:hover,
   &:focus {
@@ -71,8 +67,8 @@ export default {
 
 .fav-button {
   position: absolute;
-  top: -8px;
-  right: 8px;
+  top: 0;
+  right: 24px;
   z-index: 2;
   padding: 8px 10px;
   opacity: 0;
@@ -86,6 +82,10 @@ export default {
   @include buttonStyle();
 
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   &__icon {
     margin-bottom: 16px;

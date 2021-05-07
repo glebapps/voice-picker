@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       voices: this.$store.state.voices,
-      favVoices: this.$store.state.voices.filter((voice) => voice.isFav),
+      favVoices: this.$store.state.favVoices,
     }
   },
 }
