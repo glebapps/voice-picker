@@ -1,9 +1,16 @@
 <template>
-  <select id="order" name="order">
-    <option v-for="option in options" :key="option.value" :value="value">
-      {{ option.text }}
-    </option>
-  </select>
+  <div class="select">
+    <slot />
+    <select id="order" name="order">
+      <option
+        v-for="option in options"
+        :key="option.value"
+        :value="option.value"
+      >
+        {{ option.text }}
+      </option>
+    </select>
+  </div>
 </template>
 
 <script>
@@ -22,5 +29,10 @@ select {
   @include inputStyle();
 
   min-width: 150px;
+  margin-left: 8px;
+}
+
+.select {
+  display: flex;
 }
 </style>

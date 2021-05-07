@@ -1,7 +1,9 @@
 <template>
   <div class="toolbar">
     <InputSearch />
-    <div><InputFilter /> <InputSort /></div>
+    <div class="toolbar__actions">
+      <InputFilter /> <InputSort /> <RandomButton />
+    </div>
   </div>
 </template>
 
@@ -9,5 +11,12 @@
 .toolbar {
   display: flex;
   justify-content: space-between;
+
+  &__actions {
+    display: flex;
+    & > :nth-child(2) {
+      padding: 0 20px 0 42px;
+    }
+  }
 }
 </style>
