@@ -12,12 +12,6 @@
 
 <script>
 export default {
-  // data() {
-  //   return {
-  //     voices: this.$store.state.filteredVoices,
-  //     favVoices: this.$store.state.favVoices,
-  //   }
-  // },
   computed: {
     voices() {
       return this.$store.state.filteredVoices
