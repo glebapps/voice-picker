@@ -14,6 +14,11 @@
   align-items: center;
   justify-content: center;
 
+  @media screen and (min-width: $screen-xl) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   &__actions {
     display: flex;
     flex-direction: column;
@@ -32,6 +37,7 @@
       }
     }
     @media screen and (min-width: $screen-xl) {
+      flex-direction: row;
       justify-content: space-between;
       margin-top: 0;
     }

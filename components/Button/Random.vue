@@ -1,9 +1,15 @@
 <template>
-  <div @click="pickRandomVoice">RANDOM</div>
+  <div @click="pickRandomVoice">
+    <RandomPickerIcon />
+  </div>
 </template>
 
 <script>
+import RandomPickerIcon from '~/assets/svg/button-random.svg?inline'
 export default {
+  components: {
+    RandomPickerIcon,
+  },
   methods: {
     pickRandomVoice() {
       this.$store.commit('pickRandomVoice')
