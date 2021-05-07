@@ -2,7 +2,7 @@
   <button class="voice">
     <ButtonFav class="voice__fav" />
     <img
-      :src="require(`~/assets/img/icons/${icon}`)"
+      :src="require(`~/assets/img/voice-icons/${icon}`)"
       alt=""
       role="presentation"
       aria-hidden="true"
@@ -42,7 +42,7 @@ export default {
 
   &__icon {
     margin-bottom: 16px;
-    background-color: var(--bg-icon);
+    background-color: var(--bg-voice);
     border-radius: 50%;
     transition: background-color var(--t-hover) linear;
   }
@@ -58,8 +58,10 @@ export default {
   &__fav {
     position: absolute;
     top: 0;
-    right: 0;
-    color: white;
+    right: 16px;
+    padding: 8px 10px;
+    background-color: var(--bg-voice--hover);
+    border-radius: 50%;
     opacity: 0;
     transition: opacity var(--t-hover) ease-in;
   }
@@ -67,10 +69,10 @@ export default {
   &:hover,
   &:focus {
     .voice__icon {
-      background-color: var(--bg-icon--hover);
+      background-color: var(--bg-voice--hover);
     }
     .voice__name {
-      color: var(--bg-icon--hover);
+      color: var(--bg-voice--hover);
     }
     .voice__fav {
       opacity: 1;
