@@ -1,6 +1,6 @@
 <template>
   <div class="voice-wrapper">
-    <ButtonFav class="fav-button" :is-faved="voice.isFav" @click="toggleFav" />
+    <ButtonFav class="fav-button" :is-faved="isFav" @click="toggleFav" />
     <button class="voice" @click="selectVoice">
       <img
         :id="`${voice.id}-icon`"
@@ -27,6 +27,9 @@ export default {
   computed: {
     selectedVoice() {
       return this.$store.state.selectedVoice
+    },
+    isFav() {
+      return this.$store.state.favVoices.includes(this.voice)
     },
   },
   methods: {
