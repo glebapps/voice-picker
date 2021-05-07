@@ -11,6 +11,7 @@
 
 <style lang="scss" scoped>
 .toolbar {
+  width: 100%;
   margin-top: 32px;
   margin-bottom: 32px;
   padding: 0 24px;

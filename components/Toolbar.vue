@@ -37,6 +37,7 @@
       }
     }
     @media screen and (min-width: $screen-xl) {
+      justify-content: space-between;
       margin-top: 0;
     }
   }
