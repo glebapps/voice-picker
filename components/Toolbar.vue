@@ -2,7 +2,7 @@
   <div class="toolbar">
     <InputSearch />
     <div class="toolbar__actions">
-      <InputFilter /> <InputSort /> <RandomButton />
+      <InputFilter /> <InputSort /> <ButtonRandom />
     </div>
   </div>
 </template>

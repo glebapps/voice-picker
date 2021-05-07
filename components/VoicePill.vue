@@ -1,5 +1,6 @@
 <template>
   <button class="voice">
+    <ButtonFav class="voice__fav" />
     <img
       :src="require(`~/assets/img/icons/${icon}`)"
       alt=""
@@ -28,6 +29,9 @@ export default {
 
 <style lang="scss" scoped>
 .voice {
+  --t-hover: 0.3s;
+
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,6 +44,7 @@ export default {
     margin-bottom: 16px;
     background-color: var(--bg-icon);
     border-radius: 50%;
+    transition: background-color var(--t-hover) linear;
   }
 
   &__name {
@@ -47,6 +52,29 @@ export default {
     font-weight: var(--fw-bold);
     font-size: smaller;
     text-align: center;
+    transition: color var(--t-hover) linear;
+  }
+
+  &__fav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    opacity: 0;
+    transition: opacity var(--t-hover) ease-in;
+  }
+
+  &:hover,
+  &:focus {
+    .voice__icon {
+      background-color: var(--bg-icon--hover);
+    }
+    .voice__name {
+      color: var(--bg-icon--hover);
+    }
+    .voice__fav {
+      opacity: 1;
+    }
   }
 }
 </style>
