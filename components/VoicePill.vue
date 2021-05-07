@@ -1,46 +1,49 @@
 <template>
-  <button class="voice" @click="selectVoice">
-    <ButtonFav class="voice__fav" @click="favVoice" />
-    <img
-      :src="require(`~/assets/img/voice-icons/${icon}`)"
-      alt=""
-      role="presentation"
-      aria-hidden="true"
-      class="voice__icon"
-    />
-    <span class="voice__name">{{ name }}</span>
-  </button>
+  <div class="voice-wrapper">
+    <ButtonFav class="fav-button" :is-faved="voice.isFav" @click="toggleFav" />
+    <button class="voice" @click="selectVoice">
+      <img
+        :id="`${voice.id}-icon`"
+        :src="require(`~/assets/img/voice-icons/${voice.icon}`)"
+        alt=""
+        role="presentation"
+        aria-hidden="true"
+        class="voice__icon"
+        :class="voice.id === selectedVoice && 'voice__icon--selected'"
+      />
+      <span class="voice__name">{{ voice.name }}</span>
+    </button>
+  </div>
 </template>
 
 <script>
 export default {
   props: {
-    id: {
-      type: String,
-      required: true,
-    },
-    icon: {
-      type: String,
-      required: true,
-    },
-    name: {
-      type: String,
+    voice: {
+      type: Object,
       required: true,
     },
   },
+  computed: {
+    selectedVoice() {
+      return this.$store.state.selectedVoice
+    },
+  },
   methods: {
-    favVoice() {
-      console.log(`voice with ${this.id} is faved`)
+    toggleFav() {
+      this.$store.commit('toggleFav', this.voice.id)
     },
     selectVoice() {
-      console.log(`voice with ${this.id} is selected`)
+      const selectedVoice =
+        this.selectedVoice === this.voice.id ? null : this.voice.id
+      this.$store.commit('selectVoice', selectedVoice)
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.voice {
+.voice-wrapper {
   --t-hover: 0.3s;
 
   position: relative;
@@ -48,15 +51,53 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: none;
-  border: none;
-  cursor: pointer;
 
+  button {
+    @include buttonStyle();
+  }
+
+  &:hover,
+  &:focus {
+    .voice__icon {
+      background-color: var(--bg-voice--hover);
+    }
+    .voice__icon--selected {
+      background-color: var(--bg-voice--selected);
+    }
+    .voice__name {
+      color: var(--bg-voice--hover);
+    }
+    .fav-button {
+      opacity: 1;
+    }
+  }
+}
+
+.fav-button {
+  position: absolute;
+  top: -20px;
+  right: 16px;
+  z-index: 2;
+  padding: 8px 10px;
+  background-color: var(--bg-voice--hover);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity var(--t-hover) ease-in;
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.voice {
+  z-index: 1;
   &__icon {
     margin-bottom: 16px;
     background-color: var(--bg-voice);
     border-radius: 50%;
     transition: background-color var(--t-hover) linear;
+    &--selected {
+      background-color: var(--bg-voice--selected);
+    }
   }
 
   &__name {
@@ -65,33 +106,6 @@ export default {
     font-size: smaller;
     text-align: center;
     transition: color var(--t-hover) linear;
-  }
-
-  &__fav {
-    position: absolute;
-    top: 0;
-    right: 16px;
-    padding: 8px 10px;
-    background-color: var(--bg-voice--hover);
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity var(--t-hover) ease-in;
-    &:focus {
-      opacity: 1;
-    }
-  }
-
-  &:hover,
-  &:focus {
-    .voice__icon {
-      background-color: var(--bg-voice--hover);
-    }
-    .voice__name {
-      color: var(--bg-voice--hover);
-    }
-    .voice__fav {
-      opacity: 1;
-    }
   }
 }
 </style>

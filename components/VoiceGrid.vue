@@ -1,12 +1,6 @@
 <template>
   <div class="grid">
-    <VoicePill
-      v-for="voice in voices"
-      :id="voice.id"
-      :key="voice.id"
-      :name="voice.name"
-      :icon="voice.icon"
-    />
+    <VoicePill v-for="voice in voices" :key="voice.id" :voice="voice" />
   </div>
 </template>
 

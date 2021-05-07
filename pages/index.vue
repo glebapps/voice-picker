@@ -11,18 +11,12 @@
 </template>
 
 <script>
-import voicesJson from '~/content/voices.json'
-
 export default {
   data() {
     return {
-      voices: voicesJson,
+      voices: this.$store.state.voices,
+      favVoices: this.$store.state.voices.filter((voice) => voice.isFav),
     }
-  },
-  computed: {
-    favVoices() {
-      return this.voices.filter((voice) => voice.isFav)
-    },
   },
 }
 </script>

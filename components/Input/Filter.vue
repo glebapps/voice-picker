@@ -14,7 +14,8 @@ export default {
   computed: {
     options() {
       const allTags = this.$store.state.voices.flatMap((voice) => voice.tags)
-      return new Set(allTags)
+      const uniqueTags = new Set(allTags)
+      return Array.from(uniqueTags)
     },
   },
 }

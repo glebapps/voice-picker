@@ -1,6 +1,6 @@
 <template>
   <button @click="handleClick">
-    <FavOn v-if="selected" />
+    <FavOn v-if="isFaved" />
     <FavOff v-else />
   </button>
 </template>
@@ -15,7 +15,7 @@ export default {
     FavOn,
   },
   props: {
-    selected: {
+    isFaved: {
       type: Boolean,
       default: false,
     },

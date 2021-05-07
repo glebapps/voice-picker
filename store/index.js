@@ -2,19 +2,18 @@ import voicesJson from '~/content/voices.json'
 
 export const state = () => ({
   voices: voicesJson,
+  selectedVoice: null,
 })
 
 export const mutations = {
-  favVoice(voiceId) {
-    // TODO
+  toggleFav(state, voiceId) {
+    state.voices.forEach((voice) => {
+      if (voice.id === voiceId) {
+        voice.isFav = true
+      }
+    })
   },
-  unfavVoice(voiceId) {
-    // TODO
-  },
-  selectVoice(voiceId) {
-    // TODO
-  },
-  unselectVoice(voiceId) {
-    // TODO
+  selectVoice(state, voiceId) {
+    state.selectedVoice = voiceId
   },
 }
