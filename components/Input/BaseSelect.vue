@@ -4,10 +4,10 @@
     <select id="order" name="order">
       <option
         v-for="option in options"
-        :key="option.value"
-        :value="option.value"
+        :key="option.value ? option.value : option"
+        :value="option.value ? option.value : option"
       >
-        {{ option.text }}
+        {{ option.text ? option.text : option }}
       </option>
     </select>
   </div>

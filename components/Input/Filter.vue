@@ -11,13 +11,11 @@ export default {
   components: {
     EyeIcon,
   },
-  data() {
-    return {
-      options: [
-        { text: 'Ascending', value: 'asc' },
-        { text: 'Descending', value: 'desc' },
-      ],
-    }
+  computed: {
+    options() {
+      const allTags = this.$store.state.voices.flatMap((voice) => voice.tags)
+      return new Set(allTags)
+    },
   },
 }
 </script>
