@@ -1,5 +1,5 @@
 <template>
-  <InputBaseSelect :options="options">
+  <InputBaseSelect id="sort" :options="options">
     <OrderIcon />
   </InputBaseSelect>
 </template>
@@ -12,10 +12,7 @@ export default {
   },
   data() {
     return {
-      options: [
-        { text: 'Ascending', value: 'asc' },
-        { text: 'Descending', value: 'desc' },
-      ],
+      options: ['asc', 'desc'],
     }
   },
 }

@@ -1,13 +1,9 @@
 <template>
   <div class="select">
     <slot />
-    <select id="order" name="order">
-      <option
-        v-for="option in options"
-        :key="option.value ? option.value : option"
-        :value="option.value ? option.value : option"
-      >
-        {{ option.text ? option.text : option }}
+    <select :id="id" v-model="selectedOption" :name="id" @change="onChange">
+      <option v-for="option in options" :key="option" :value="option">
+        {{ option }}
       </option>
     </select>
   </div>
@@ -16,9 +12,27 @@
 <script>
 export default {
   props: {
+    id: {
+      type: String,
+      required: true,
+    },
     options: {
       type: Array,
       required: true,
+    },
+  },
+  data() {
+    return {
+      selectedOption: this.id === 'sort' ? 'asc' : 'all',
+    }
+  },
+  methods: {
+    onChange() {
+      if (this.id === 'sort') {
+        this.$store.commit('sort', this.selectedOption)
+      } else {
+        this.$store.commit('filter', this.selectedOption)
+      }
     },
   },
 }

@@ -1,5 +1,5 @@
 <template>
-  <InputBaseSelect :options="options">
+  <InputBaseSelect id="filter" :options="options">
     <EyeIcon />
   </InputBaseSelect>
 </template>
