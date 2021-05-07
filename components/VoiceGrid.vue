@@ -25,28 +25,24 @@ export default {
 .grid {
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   align-items: baseline;
   column-gap: 48px;
   row-gap: 32px;
 
-  @media screen and (min-width: 400px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media screen and (min-width: 520px) {
+  @media screen and (min-width: $screen-sm) {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $screen-tablet) {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: $screen-xl) {
     grid-template-columns: repeat(5, 1fr);
   }
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: $screen-max) {
     grid-template-columns: repeat(6, 1fr);
   }
 }

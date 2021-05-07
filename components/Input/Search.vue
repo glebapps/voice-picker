@@ -22,6 +22,7 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
+  max-width: fit-content;
 
   &__icon {
     position: absolute;
@@ -36,7 +37,7 @@ export default {
   input {
     @include inputStyle(16px);
 
-    padding-left: 32px;
+    padding: 0 32px;
   }
 }
 </style>
