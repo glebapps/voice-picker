@@ -1,5 +1,5 @@
 <template>
-  <button>
+  <button @click="handleClick">
     <FavOn v-if="selected" />
     <FavOff v-else />
   </button>
@@ -18,6 +18,11 @@ export default {
     selected: {
       type: Boolean,
       default: false,
+    },
+  },
+  methods: {
+    handleClick() {
+      this.$emit('click')
     },
   },
 }

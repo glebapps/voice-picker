@@ -1,6 +1,6 @@
 <template>
-  <button class="voice">
-    <ButtonFav class="voice__fav" />
+  <button class="voice" @click="selectVoice">
+    <ButtonFav class="voice__fav" @click="favVoice" />
     <img
       :src="require(`~/assets/img/voice-icons/${icon}`)"
       alt=""
@@ -15,6 +15,10 @@
 <script>
 export default {
   props: {
+    id: {
+      type: String,
+      required: true,
+    },
     icon: {
       type: String,
       required: true,
@@ -22,6 +26,14 @@ export default {
     name: {
       type: String,
       required: true,
+    },
+  },
+  methods: {
+    favVoice() {
+      console.log(`voice with ${this.id} is faved`)
+    },
+    selectVoice() {
+      console.log(`voice with ${this.id} is selected`)
     },
   },
 }

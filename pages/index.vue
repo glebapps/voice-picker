@@ -3,11 +3,29 @@
     <Toolbar class="toolbar" />
     <div class="main">
       <SectionTitle>Favourite voices</SectionTitle>
+      <VoiceGrid :voices="favVoices" />
       <SectionTitle>Pro voices</SectionTitle>
-      <VoiceGrid />
+      <VoiceGrid :voices="voices" />
     </div>
   </div>
 </template>
+
+<script>
+import voicesJson from '~/content/voices.json'
+
+export default {
+  data() {
+    return {
+      voices: voicesJson,
+    }
+  },
+  computed: {
+    favVoices() {
+      return this.voices.filter((voice) => voice.isFav)
+    },
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .toolbar {

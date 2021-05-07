@@ -2,6 +2,7 @@
   <div class="grid">
     <VoicePill
       v-for="voice in voices"
+      :id="voice.id"
       :key="voice.id"
       :name="voice.name"
       :icon="voice.icon"
@@ -10,13 +11,12 @@
 </template>
 
 <script>
-import voicesJson from '~/content/voices.json'
-
 export default {
-  data() {
-    return {
-      voices: voicesJson,
-    }
+  props: {
+    voices: {
+      type: Array,
+      required: true,
+    },
   },
 }
 </script>
