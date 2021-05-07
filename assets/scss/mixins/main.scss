@@ -5,3 +5,9 @@
   border-color: var(--bg-input);
   border-radius: $border-radius;
 }
+
+@mixin buttonStyle() {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

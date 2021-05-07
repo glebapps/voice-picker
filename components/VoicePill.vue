@@ -64,6 +64,9 @@ export default {
     border-radius: 50%;
     opacity: 0;
     transition: opacity var(--t-hover) ease-in;
+    &:focus {
+      opacity: 1;
+    }
   }
 
   &:hover,

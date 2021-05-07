@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <button>
     <FavOn v-if="selected" />
     <FavOff v-else />
-  </div>
+  </button>
 </template>
 
 <script>
@@ -22,3 +22,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+button {
+  @include buttonStyle();
+}
+</style>
