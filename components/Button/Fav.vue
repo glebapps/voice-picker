@@ -31,5 +31,8 @@ export default {
 <style lang="scss" scoped>
 button {
   @include buttonStyle();
+
+  background-color: var(--bg-voice--hover);
+  border-radius: 50%;
 }
 </style>

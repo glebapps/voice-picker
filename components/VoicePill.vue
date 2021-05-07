@@ -52,10 +52,6 @@ export default {
   align-items: center;
   justify-content: center;
 
-  button {
-    @include buttonStyle();
-  }
-
   &:hover,
   &:focus {
     .voice__icon {
@@ -75,12 +71,10 @@ export default {
 
 .fav-button {
   position: absolute;
-  top: -20px;
-  right: 16px;
+  top: -8px;
+  right: 8px;
   z-index: 2;
   padding: 8px 10px;
-  background-color: var(--bg-voice--hover);
-  border-radius: 50%;
   opacity: 0;
   transition: opacity var(--t-hover) ease-in;
   &:focus {
@@ -89,7 +83,10 @@ export default {
 }
 
 .voice {
+  @include buttonStyle();
+
   z-index: 1;
+
   &__icon {
     margin-bottom: 16px;
     background-color: var(--bg-voice);
