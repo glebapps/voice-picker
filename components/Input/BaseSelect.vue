@@ -2,7 +2,7 @@
   <div class="select">
     <slot />
     <select :id="id" v-model="selectedOption" :name="id" @change="onChange">
-      <option v-for="option in options" :key="option" :value="option">
+      <option v-for="option in options" :key="option">
         {{ option }}
       </option>
     </select>
@@ -23,7 +23,8 @@ export default {
   },
   data() {
     return {
-      selectedOption: this.id === 'sort' ? 'asc' : 'all',
+      selectedOption:
+        this.id === 'sort' ? 'asc' : this.$store.state.currentFilter,
     }
   },
   methods: {

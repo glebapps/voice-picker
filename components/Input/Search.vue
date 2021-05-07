@@ -1,10 +1,10 @@
 <template>
   <div class="input">
     <SearchIcon class="input__search-icon" />
-    <input v-model="query" type="text" />
-    <butto class="input__close-icon" @click="query = ''">
+    <input v-model="query" type="text" @input="search" />
+    <button class="input__close-icon" @click="clearSearch">
       <SearchClose v-if="query" />
-    </butto>
+    </button>
   </div>
 </template>
 
@@ -20,6 +20,19 @@ export default {
     return {
       query: '',
     }
+  },
+  methods: {
+    search() {
+      if (this.query) {
+        this.$store.commit('search', this.query)
+      } else {
+        this.$store.commit('resetData')
+      }
+    },
+    clearSearch() {
+      this.query = ''
+      this.$store.commit('resetData')
+    },
   },
 }
 </script>

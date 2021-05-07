@@ -4,10 +4,14 @@ export const state = () => ({
   voices: voicesJson,
   favVoices: [],
   filteredVoices: voicesJson,
+  currentFilter: 'all',
   selectedVoice: null,
 })
 
 export const mutations = {
+  resetData(state) {
+    state.filteredVoices = [...state.voices]
+  },
   toggleFav(state, voice) {
     const voiceIndex = state.favVoices.findIndex(
       (_voice) => _voice.id === voice.id
@@ -22,12 +26,20 @@ export const mutations = {
     state.selectedVoice = voiceId
   },
   filter(state, filter) {
+    state.currentFilter = filter
     state.filteredVoices = [...state.voices]
     if (filter !== 'all') {
       state.filteredVoices = state.filteredVoices.filter((voice) =>
         voice.tags.includes(filter)
       )
     }
+  },
+  search(state, query) {
+    state.currentFilter = 'all'
+    state.filteredVoices = [...state.voices]
+    state.filteredVoices = state.filteredVoices.filter((voice) =>
+      voice.name.includes(query)
+    )
   },
   sort(state, sort) {
     state.filteredVoices.sort((voiceA, voiceB) => {
