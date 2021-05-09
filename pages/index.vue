@@ -2,10 +2,10 @@
   <div>
     <Toolbar class="toolbar" />
     <div class="main">
-      <SectionTitle>Favourite voices</SectionTitle>
-      <VoiceGrid :voices="favVoices" />
+      <SectionTitle>Favorite voices</SectionTitle>
+      <VoiceGrid :voices="favVoices" data-test-id="favorites" />
       <SectionTitle>Pro voices</SectionTitle>
-      <VoiceGrid :voices="voices" />
+      <VoiceGrid :voices="voices" data-test-id="voices" />
     </div>
   </div>
 </template>

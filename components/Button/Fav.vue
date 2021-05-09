@@ -1,5 +1,5 @@
 <template>
-  <button :aria-label="label" @click="handleClick">
+  <button :id="`${voiceName}_fav`" :aria-label="label" @click="handleClick">
     <FavOn v-if="isFaved" />
     <FavOff v-else />
   </button>
