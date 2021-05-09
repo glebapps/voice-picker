@@ -25,9 +25,6 @@ export default {
 
 <style lang="scss" scoped>
 .toolbar {
-  width: 100%;
-  margin-top: 32px;
-  margin-bottom: 32px;
   padding: 0 24px;
 
   @media screen and (min-width: $screen-sm) {
@@ -40,6 +37,7 @@ export default {
 }
 
 .main {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 0 32px;

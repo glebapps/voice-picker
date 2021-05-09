@@ -13,6 +13,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  margin: 32px 0;
 
   @media screen and (min-width: $screen-xl) {
     flex-direction: row;
