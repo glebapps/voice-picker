@@ -16,6 +16,10 @@ body {
 }
 
 *:focus {
+  outline: none;
+}
+
+*:focus-visible {
   outline: 3px dashed var(--bg-voice);
   outline-offset: 8px;
 }
