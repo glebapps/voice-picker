@@ -3,7 +3,7 @@ export default {
   ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'voice-picker',
+    title: 'Voice Picker',
     htmlAttrs: {
       lang: 'en',
     },
