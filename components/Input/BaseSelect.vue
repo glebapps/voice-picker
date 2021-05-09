@@ -6,7 +6,6 @@
         :aria-label="label"
         class="select__selected"
         @click="toggleOptions"
-        @blur="optionsVisible = false"
       >
         {{ selectedOption }}
         <Arrow
@@ -63,7 +62,9 @@ export default {
   },
   computed: {
     selectedOption() {
-      return this.id === 'sort' ? 'asc' : this.$store.state.currentFilter
+      return this.id === 'sort'
+        ? this.$store.state.currentOrder
+        : this.$store.state.currentFilter
     },
   },
   methods: {

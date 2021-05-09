@@ -5,6 +5,7 @@ export const state = () => ({
   favVoices: [],
   filteredVoices: voicesJson,
   currentFilter: 'all',
+  currentOrder: 'asc',
   selectedVoice: null,
 })
 
@@ -42,6 +43,7 @@ export const mutations = {
     )
   },
   sort(state, sort) {
+    state.currentOrder = sort
     state.filteredVoices.sort((voiceA, voiceB) => {
       if (sort === 'asc') {
         return voiceA.name.localeCompare(voiceB.name)
@@ -54,7 +56,7 @@ export const mutations = {
     const numVoices = state.filteredVoices.length
     const randomIndex = Math.floor(Math.random() * numVoices)
     const selectedVoice = state.filteredVoices.find(
-      (voice, index) => index === randomIndex
+      (_, index) => index === randomIndex
     )
     state.selectedVoice = selectedVoice.id
   },
