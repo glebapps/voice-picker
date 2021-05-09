@@ -1,5 +1,5 @@
 <template>
-  <button @click="handleClick">
+  <button :aria-label="label" @click="handleClick">
     <FavOn v-if="isFaved" />
     <FavOff v-else />
   </button>
@@ -18,6 +18,17 @@ export default {
     isFaved: {
       type: Boolean,
       default: false,
+    },
+    voiceName: {
+      type: String,
+      required: true,
+    },
+  },
+  computed: {
+    label() {
+      return this.isFaved
+        ? `Remove ${this.voiceName} voice from favourites`
+        : `Save ${this.voiceName} voice to favourites`
     },
   },
   methods: {

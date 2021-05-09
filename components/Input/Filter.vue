@@ -1,5 +1,5 @@
 <template>
-  <InputBaseSelect id="filter" :options="options">
+  <InputBaseSelect id="filter" :options="options" label="Filter voices by tag">
     <EyeIcon />
   </InputBaseSelect>
 </template>

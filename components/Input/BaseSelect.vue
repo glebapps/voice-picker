@@ -1,7 +1,13 @@
 <template>
   <div class="select">
     <slot />
-    <select :id="id" v-model="selectedOption" :name="id" @change="onChange">
+    <select
+      :id="id"
+      v-model="selectedOption"
+      :name="id"
+      :aria-label="label"
+      @change="onChange"
+    >
       <option v-for="option in options" :key="option">
         {{ option }}
       </option>
@@ -18,6 +24,10 @@ export default {
     },
     options: {
       type: Array,
+      required: true,
+    },
+    label: {
+      type: String,
       required: true,
     },
   },

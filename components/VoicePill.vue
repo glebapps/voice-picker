@@ -1,6 +1,11 @@
 <template>
   <div :id="voice.id" class="voice-wrapper">
-    <ButtonFav class="fav-button" :is-faved="isFav" @click="toggleFav" />
+    <ButtonFav
+      class="fav-button"
+      :is-faved="isFav"
+      :voice-name="voice.name"
+      @click="toggleFav"
+    />
     <button class="voice" @click="selectVoice">
       <img
         :id="`${voice.id}-icon`"

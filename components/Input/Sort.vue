@@ -1,5 +1,5 @@
 <template>
-  <InputBaseSelect id="sort" :options="options">
+  <InputBaseSelect id="sort" :options="options" label="Sort voices">
     <OrderIcon />
   </InputBaseSelect>
 </template>

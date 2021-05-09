@@ -8,7 +8,7 @@
       @input="search"
     />
     <button class="input__close-icon" @click="clearSearch">
-      <SearchClose v-if="query" />
+      <SearchClose v-if="query" aria-hidden="true" role="presentation" />
     </button>
   </div>
 </template>
