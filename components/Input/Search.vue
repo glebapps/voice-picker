@@ -1,7 +1,12 @@
 <template>
   <div class="input">
     <SearchIcon class="input__search-icon" />
-    <input v-model="query" type="text" @input="search" />
+    <input
+      v-model="query"
+      type="text"
+      aria-label="Search voice by name"
+      @input="search"
+    />
     <button class="input__close-icon" @click="clearSearch">
       <SearchClose v-if="query" />
     </button>
@@ -40,9 +45,6 @@ export default {
 <style lang="scss" scoped>
 .input {
   position: relative;
-  display: flex;
-  align-items: center;
-  max-width: fit-content;
 
   &__search-icon {
     position: absolute;
