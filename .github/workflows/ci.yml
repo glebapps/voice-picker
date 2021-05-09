@@ -46,5 +46,8 @@ jobs:
       - name: Run tests 🧪
         run: npm run test
 
+      - name: Generate ⚙️
+        run: npm run generate
+
       - name: Run E2E tests 🧪
-        run: npm run e2e:ci
+        run: npx serve dist & npm run e2e:ci
