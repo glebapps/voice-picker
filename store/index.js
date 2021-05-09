@@ -36,9 +36,9 @@ export const mutations = {
   },
   search(state, query) {
     state.currentFilter = 'all'
-    state.filteredVoices = [...state.voices]
-    state.filteredVoices = state.filteredVoices.filter((voice) =>
-      voice.name.includes(query)
+    const allVoices = [...state.voices]
+    state.filteredVoices = allVoices.filter((voice) =>
+      voice.name.toLowerCase().includes(query.toLowerCase())
     )
   },
   sort(state, sort) {
