@@ -37,6 +37,7 @@ export const mutations = {
   },
   search(state, query) {
     state.currentFilter = 'all'
+    state.currentOrder = 'asc'
     const allVoices = [...state.voices]
     state.filteredVoices = allVoices.filter((voice) =>
       voice.name.toLowerCase().includes(query.toLowerCase())
