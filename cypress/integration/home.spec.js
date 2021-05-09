@@ -19,4 +19,10 @@ describe('Home', () => {
     cy.contains('human').click()
     cy.get('[data-test-id="voices"]').children().should('have.length', 9)
   })
+
+  it('Search by name', () => {
+    cy.get('[data-test-id="voices"]').children().should('have.length', 89)
+    cy.get('input#search').type('man')
+    cy.get('[data-test-id="voices"]').children().should('have.length', 5)
+  })
 })

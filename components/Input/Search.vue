@@ -2,6 +2,7 @@
   <div class="input">
     <SearchIcon class="input__search-icon" />
     <input
+      id="search"
       v-model="query"
       type="text"
       aria-label="Search voice by name"
