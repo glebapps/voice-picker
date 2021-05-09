@@ -1,7 +1,7 @@
 <template>
   <div class="select-wrapper">
     <slot />
-    <div class="select">
+    <div :id="id" class="select">
       <button
         :aria-label="label"
         class="select__selected"
@@ -15,12 +15,7 @@
           :class="optionsVisible && 'arrow--up'"
         />
       </button>
-      <ul
-        :id="id"
-        :name="id"
-        class="options"
-        :class="optionsVisible && 'options--visible'"
-      >
+      <ul class="options" :class="optionsVisible && 'options--visible'">
         <li
           v-for="option in options"
           :key="option"
