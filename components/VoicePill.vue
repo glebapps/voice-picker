@@ -1,5 +1,5 @@
 <template>
-  <div class="voice-wrapper">
+  <div :id="voice.id" class="voice-wrapper">
     <ButtonFav class="fav-button" :is-faved="isFav" @click="toggleFav" />
     <button class="voice" @click="selectVoice">
       <img
