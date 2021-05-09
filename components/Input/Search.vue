@@ -45,6 +45,8 @@ export default {
 <style lang="scss" scoped>
 .input {
   position: relative;
+  display: flex;
+  align-items: center;
 
   &__search-icon {
     position: absolute;
