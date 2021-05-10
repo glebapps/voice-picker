@@ -16,7 +16,7 @@ describe('Home', () => {
   it('Filters voice by tag', () => {
     cy.get('[data-test-id="voices"]').children().should('have.length', 89)
     cy.get('#filter').children('button').click()
-    cy.contains('human').click()
+    cy.contains('Human').click()
     cy.get('[data-test-id="voices"]').children().should('have.length', 9)
   })
 
