@@ -12,7 +12,10 @@ export default {
   },
   data() {
     return {
-      options: ['asc', 'desc'],
+      options: [
+        { label: 'Ascendent', value: 'asc' },
+        { label: 'Descendent', value: 'desc' },
+      ],
     }
   },
 }

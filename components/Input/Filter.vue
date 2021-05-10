@@ -17,7 +17,15 @@ export default {
       const uniqueTags = new Set(allTags)
       const allTagsArray = Array.from(uniqueTags)
       allTagsArray.unshift('all')
-      return allTagsArray
+      return allTagsArray.map((tag) => ({
+        label: this.camelCase(tag),
+        value: tag,
+      }))
+    },
+  },
+  methods: {
+    camelCase(tag) {
+      return tag.charAt(0).toUpperCase() + tag.slice(1)
     },
   },
 }

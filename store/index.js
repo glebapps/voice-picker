@@ -1,11 +1,14 @@
 import voicesJson from '~/content/voices.json'
 
+const defaultFilter = { label: 'All', value: 'all' }
+const defaultOrder = { label: 'Ascendent', value: 'asc' }
+
 export const state = () => ({
   voices: voicesJson,
   favVoices: [],
   filteredVoices: voicesJson,
-  currentFilter: 'all',
-  currentOrder: 'asc',
+  currentFilter: defaultFilter,
+  currentOrder: defaultOrder,
   selectedVoice: null,
 })
 
@@ -29,15 +32,15 @@ export const mutations = {
   filter(state, filter) {
     state.currentFilter = filter
     state.filteredVoices = [...state.voices]
-    if (filter !== 'all') {
+    if (filter.value !== 'all') {
       state.filteredVoices = state.filteredVoices.filter((voice) =>
-        voice.tags.includes(filter)
+        voice.tags.includes(filter.value)
       )
     }
   },
   search(state, query) {
-    state.currentFilter = 'all'
-    state.currentOrder = 'asc'
+    state.currentFilter = defaultFilter
+    state.currentOrder = defaultOrder
     const allVoices = [...state.voices]
     state.filteredVoices = allVoices.filter((voice) =>
       voice.name.toLowerCase().includes(query.toLowerCase())
@@ -46,7 +49,7 @@ export const mutations = {
   sort(state, sort) {
     state.currentOrder = sort
     state.filteredVoices.sort((voiceA, voiceB) => {
-      if (sort === 'asc') {
+      if (sort.value === 'asc') {
         return voiceA.name.localeCompare(voiceB.name)
       } else {
         return voiceB.name.localeCompare(voiceA.name)

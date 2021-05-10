@@ -7,7 +7,7 @@
         class="select__selected"
         @click="toggleOptions"
       >
-        {{ selectedOption }}
+        {{ selectedOption.label }}
         <Arrow
           aria-hidden="true"
           role="presentation"
@@ -18,11 +18,11 @@
       <ul class="options" :class="optionsVisible && 'options--visible'">
         <li
           v-for="option in options"
-          :key="option"
+          :key="option.value"
           class="options__item"
           @click="handleSelect(option)"
         >
-          {{ option }}
+          {{ option.label }}
         </li>
       </ul>
     </div>
